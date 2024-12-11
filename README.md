@@ -4,6 +4,8 @@ This project implements an enhanced **CycleGAN** architecture for **image-to-ima
 
 Developed as part of the CSC413 Deep Learning and Neural Networks (Fall 2024) course at the University of Toronto.
 
+This project was implemented by [David Chang](https://github.com/changoug), [Peter Jang](https://github.com/peterjangml), [Aaron Liu](https://github.com/Pix3ls126), and [Neil Mehta](https://github.com/mchappyneil?tab=overview&from=2024-12-01&to=2024-12-11).
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
@@ -34,7 +36,7 @@ The project seeks to achieve high-quality stylization while preserving the conte
 
 ## Model Architecture
 
-![Model Architecture](path/to/model_architecture.png)
+![Model Architecture](path/to/model_architecture.png) // TODO
 
 The architecture comprises:
 - Two **Generators**: `G_real2imp` and `G_imp2real`, responsible for bi-directional translation.
@@ -48,21 +50,17 @@ The architecture comprises:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/style-transfer-cyclegan.git
-   cd style-transfer-cyclegan
+   git clone https://github.com/mchappyneil/CSC413-GouGAN.git
+   cd CSC413-GouGAN
    ```
-2. Install dependeices:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. Ensure torch and torchvision are installed with GPU support:
+2. Ensure torch and torchvision are installed with GPU support:
     ```bash
     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
     ```
 
 ## Usage
 #### Traning the Model
-1. Prepare the dataset (see util/data.ipynb)
+1. Prepare the dataset (see [`util/data.ipynb`](util\data.ipynb))
 2. Run the training script:
     ```bash
     python train_generators.py --mode train
@@ -94,5 +92,5 @@ Our experiments demonstrate that pre-training discriminators significantly enhan
 
 ## References
 - Zhu et al., "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks", ICCV 2017.
-- Kaggle WikiArt Dataset: Link
+- Kaggle WikiArt Dataset: [Link](https://www.kaggle.com/datasets/steubk/wikiart)
 - Goodfellow et al., "Generative Adversarial Networks", NeurIPS 2014.
