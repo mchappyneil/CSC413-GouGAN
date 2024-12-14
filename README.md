@@ -72,12 +72,16 @@ python train_generators.py --mode train
 ```
 
 #### Image Conversion (Model Inference)
-Use a trained model checkpoint:
+Use a trained model checkpoint (choose `N`):
 ```bash
-python train_generators.py --mode convert --input path/to/image.jpg --output path/to/output.jpg --checkpoint path/to/checkpoint.pth
+python train_generators_N.py --mode convert --input path/to/image.jpg --output path/to/output.jpg --checkpoint path/to/checkpoint.pth
 ```
 
 Alternatively, use the example bash script on a UNIX-based system to convert multiple images (`real2imp.sh`)
+For instance, to use the Generator 4:
+```bash
+python train_generators_1.py --mode convert --input ./test/cn-tower.jpg --output ./output.jpg --checkpoint results/generator_1/model.pth
+```
 
 #### Dataset
 The model uses four types of data:
