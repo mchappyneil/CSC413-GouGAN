@@ -35,8 +35,9 @@ The project seeks to achieve high-quality stylization while preserving the conte
 - **Modular Implementation** to adapt and experiment with different styles or datasets.
 
 ## Model Architecture
-
-![Model Architecture](path/to/model_architecture.png) // TODO
+<p align="center">
+    <img src="./util/assets/arch-general.png" alt="architecture" width="500">
+</p>
 
 The architecture comprises:
 - Two **Generators**: `G_real2imp` and `G_imp2real`, responsible for bi-directional translation.
