@@ -39,7 +39,7 @@ The project seeks to achieve high-quality stylization while preserving the conte
 </p>
 
 The architecture comprises:
-- Two **Generators**: `G_real2imp` and `G_imp2real`, responsible for bi-directional translation.
+- Two **Generators**: $G_{real2imp}$ and $G_{imp2real}$, responsible for bi-directional translation.
 - Two **Discriminators**: Pre-trained to classify images as real, fake, or styled.
 - Three Loss Functions:
   - **Adversarial Loss**: Encourages style adherence.
@@ -49,31 +49,33 @@ The architecture comprises:
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/mchappyneil/CSC413-GouGAN.git
-   cd CSC413-GouGAN
-   ```
-2. Install all required libraries using `requirements.txt`. Ensure torch and torchvision are installed with GPU support:
-    ```bash
-        pip install -r requirements.txt
-    ```
-    Alternatively:
-    ```bash
-    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
-    ```
+```bash
+git clone https://github.com/mchappyneil/CSC413-GouGAN.git
+cd CSC413-GouGAN
+```
+2. Install all required libraries using `requirements.txt`.
+Ensure torch and torchvision are installed with GPU support:
+```bash
+pip install -r requirements.txt
+```
+Alternatively:
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
+```
     
 ## Usage
 #### Training the Model
 1. Prepare the dataset (see [`util/data.ipynb`](util\data.ipynb))
 2. Run the training script:
-    ```bash
-    python train_generators.py --mode train
-    ```
+```bash
+python train_generators.py --mode train
+```
+
 #### Image Conversion (Model Inference)
 Use a trained model checkpoint:
-    ```bash
-    python train_generators.py --mode convert --input path/to/image.jpg --output path/to/output.jpg --checkpoint path/to/checkpoint.pth
-    ```
+```bash
+python train_generators.py --mode convert --input path/to/image.jpg --output path/to/output.jpg --checkpoint path/to/checkpoint.pth
+```
 
 Alternatively, use the example bash script on a UNIX-based system to convert multiple images (`real2imp.sh`)
 
