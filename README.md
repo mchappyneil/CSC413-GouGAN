@@ -17,7 +17,6 @@ This project was implemented by [David Chang](https://github.com/changoug), [Pet
 - [Dataset](#dataset)
 - [Results](#results)
 - [Ethical Considerations](#ethical-considerations)
-- [References](#references)
 
 ## Introduction
 
@@ -54,36 +53,41 @@ The architecture comprises:
    git clone https://github.com/mchappyneil/CSC413-GouGAN.git
    cd CSC413-GouGAN
    ```
-2. Ensure torch and torchvision are installed with GPU support:
+2. Install all required libraries using `requirements.txt`. Ensure torch and torchvision are installed with GPU support:
+    ```bash
+        pip install -r requirements.txt
+    ```
+    Alternatively:
     ```bash
     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
     ```
-
+    
 ## Usage
-#### Traning the Model
+#### Training the Model
 1. Prepare the dataset (see [`util/data.ipynb`](util\data.ipynb))
 2. Run the training script:
     ```bash
     python train_generators.py --mode train
     ```
-#### Image Conversion
-1. Use a trained model checkpoint:
+#### Image Conversion (Model Inference)
+Use a trained model checkpoint:
     ```bash
-    python main.py --mode convert --input path/to/image.jpg --output path/to/output.jpg --checkpoint path/to/checkpoint.pth
+    python train_generators.py --mode convert --input path/to/image.jpg --output path/to/output.jpg --checkpoint path/to/checkpoint.pth
     ```
+
+Alternatively, use the example bash script on a UNIX-based system to convert multiple images (`real2imp.sh`)
 
 #### Dataset
 The model uses four types of data:
 
 1. Impressionist Art: Images of Impressionist paintings (e.g., Monet, Renoir).
 2. Non-Impressionist Art: Images from other artistic styles.
-3. Real-life Images: Photos from datasets like ImageNet and CIFAKE.
+3. Real-life Images: Photos from datasets like ImageNet
 4. Synthetic Images: AI-generated fake real-life images.
 
-Ensure all images are pre-processed to a resolution of $224 \times 224$ pixels.
 
 #### Results
-Our experiments demonstrate that pre-training discriminators significantly enhances style fidelity and image quality. Detailed results can be found in the results/ directory.
+Detailed results can be found in the `./results/` directory.
 
 ## Ethical Considerations
 - Copyright: Datasets like WikiArt are used responsibly as open-source.
@@ -91,7 +95,3 @@ Our experiments demonstrate that pre-training discriminators significantly enhan
 - Accuracy: Extensive testing ensures robust style transfer across various input domains.
 - Privacy: No sensitive data is used; all datasets are open-source.
 
-## References
-- Zhu et al., "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks", ICCV 2017.
-- Kaggle WikiArt Dataset: [Link](https://www.kaggle.com/datasets/steubk/wikiart)
-- Goodfellow et al., "Generative Adversarial Networks", NeurIPS 2014.
